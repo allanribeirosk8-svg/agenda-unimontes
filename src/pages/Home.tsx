@@ -43,12 +43,16 @@ export default function Home() {
   const [weekDates, setWeekDates] = useState({ start: '', end: '' });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [activeSection, setActiveSection] = useState<'agenda' | 'noticias' | 'calendario'>('agenda');
+  const [activeSection, setActiveSection] = useState<'agenda' | 'noticias' | 'calendario' | 'editais'>('agenda');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleNavClick = (section: 'agenda' | 'noticias' | 'calendario') => {
+  const handleNavClick = (section: 'agenda' | 'noticias' | 'calendario' | 'editais') => {
     if (section === 'calendario') {
       window.open('https://drive.google.com/file/d/1KtIHqC2_AzpwGb-lZFTKTyxNVGr_MIcV/view?usp=drive_link', '_blank');
+      return;
+    }
+    if (section === 'editais') {
+      window.open('https://www.coteps.unimontes.br/', '_blank');
       return;
     }
     setActiveSection(section);
@@ -270,6 +274,12 @@ export default function Home() {
                 >
                   Calendário Escolar
                 </button>
+                <button
+                  onClick={() => handleNavClick('editais')}
+                  className="text-xs md:text-sm lg:text-base font-semibold transition-all duration-300 pb-2 text-gray-600 hover:text-blue-600 border-b-3 border-transparent whitespace-nowrap flex-shrink-0"
+                >
+                  Editais
+                </button>
               </div>
 
               {/* Ícones de Redes Sociais - Desktop */}
@@ -402,6 +412,12 @@ export default function Home() {
               className="w-full text-left px-4 py-3 rounded-lg font-semibold transition-all duration-300 text-gray-600 hover:bg-gray-100"
             >
               Calendário Escolar
+            </button>
+            <button
+              onClick={() => handleNavClick('editais')}
+              className="w-full text-left px-4 py-3 rounded-lg font-semibold transition-all duration-300 text-gray-600 hover:bg-gray-100"
+            >
+              Editais
             </button>
           </div>
         </div>
