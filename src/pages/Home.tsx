@@ -43,10 +43,14 @@ export default function Home() {
   const [weekDates, setWeekDates] = useState({ start: '', end: '' });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [activeSection, setActiveSection] = useState<'agenda' | 'noticias'>('agenda');
+  const [activeSection, setActiveSection] = useState<'agenda' | 'noticias' | 'calendario'>('agenda');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleNavClick = (section: 'agenda' | 'noticias') => {
+  const handleNavClick = (section: 'agenda' | 'noticias' | 'calendario') => {
+    if (section === 'calendario') {
+      window.open('https://drive.google.com/file/d/1KtIHqC2_AzpwGb-lZFTKTyxNVGr_MIcV/view?usp=drive_link', '_blank');
+      return;
+    }
     setActiveSection(section);
     setMobileMenuOpen(false);
     document.getElementById(section === 'agenda' ? 'agenda-section' : 'noticias-section')?.scrollIntoView({ behavior: 'smooth' });
@@ -260,6 +264,12 @@ export default function Home() {
                 >
                   Notícias
                 </button>
+                <button
+                  onClick={() => handleNavClick('calendario')}
+                  className="text-lg font-semibold transition-all duration-300 pb-2 text-gray-600 hover:text-blue-600 border-b-3 border-transparent"
+                >
+                  Calendário Escolar
+                </button>
               </div>
 
               {/* Ícones de Redes Sociais - Desktop */}
@@ -382,6 +392,12 @@ export default function Home() {
               }`}
             >
               Notícias
+            </button>
+            <button
+              onClick={() => handleNavClick('calendario')}
+              className="w-full text-left px-4 py-3 rounded-lg font-semibold transition-all duration-300 text-gray-600 hover:bg-gray-100"
+            >
+              Calendário Escolar
             </button>
           </div>
         </div>
