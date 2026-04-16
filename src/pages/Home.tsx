@@ -243,10 +243,10 @@ export default function Home() {
               </div>
 
               {/* Navegacao Principal - Desktop */}
-              <div className="flex items-center gap-8 flex-1 justify-center">
+              <div className="flex items-center gap-4 lg:gap-8 flex-1 justify-center flex-wrap">
                 <button
                   onClick={() => handleNavClick('agenda')}
-                  className={`text-lg font-semibold transition-all duration-300 pb-2 ${
+                  className={`text-sm md:text-base lg:text-lg font-semibold transition-all duration-300 pb-2 whitespace-nowrap ${
                     activeSection === 'agenda'
                       ? 'text-blue-600 border-b-3 border-blue-600'
                       : 'text-gray-600 hover:text-blue-600 border-b-3 border-transparent'
@@ -256,7 +256,7 @@ export default function Home() {
                 </button>
                 <button
                   onClick={() => handleNavClick('noticias')}
-                  className={`text-lg font-semibold transition-all duration-300 pb-2 ${
+                  className={`text-sm md:text-base lg:text-lg font-semibold transition-all duration-300 pb-2 whitespace-nowrap ${
                     activeSection === 'noticias'
                       ? 'text-blue-600 border-b-3 border-blue-600'
                       : 'text-gray-600 hover:text-blue-600 border-b-3 border-transparent'
@@ -266,7 +266,7 @@ export default function Home() {
                 </button>
                 <button
                   onClick={() => handleNavClick('calendario')}
-                  className="text-lg font-semibold transition-all duration-300 pb-2 text-gray-600 hover:text-blue-600 border-b-3 border-transparent"
+                  className="text-sm md:text-base lg:text-lg font-semibold transition-all duration-300 pb-2 text-gray-600 hover:text-blue-600 border-b-3 border-transparent whitespace-nowrap"
                 >
                   Calendário Escolar
                 </button>
