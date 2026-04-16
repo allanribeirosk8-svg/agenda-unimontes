@@ -11,6 +11,8 @@ import { useMemo } from "react";
 const getBasename = () => {
   if (typeof window === 'undefined') return '/';
   const pathname = window.location.pathname;
+  // Se estamos no GitHub Pages com /agenda-unimontes/, usar isso como basename
+  if (pathname.includes('/agenda-unimontes/')) return '/agenda-unimontes';
   // Se estamos no GitHub Pages com /siteunimontes/, usar isso como basename
   if (pathname.includes('/siteunimontes/')) return '/siteunimontes';
   // Se estamos no GitHub Pages com /agendauni/, usar isso como basename (compatibilidade)
