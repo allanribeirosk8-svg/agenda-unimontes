@@ -243,10 +243,10 @@ export default function Home() {
               </div>
 
               {/* Navegacao Principal - Desktop */}
-              <div className="flex items-center gap-4 lg:gap-8 flex-1 justify-center flex-wrap">
+              <div className="flex items-center gap-2 md:gap-4 lg:gap-6 flex-1 justify-center flex-nowrap min-w-0 overflow-hidden">
                 <button
                   onClick={() => handleNavClick('agenda')}
-                  className={`text-sm md:text-base lg:text-lg font-semibold transition-all duration-300 pb-2 whitespace-nowrap ${
+                  className={`text-xs md:text-sm lg:text-base font-semibold transition-all duration-300 pb-2 whitespace-nowrap flex-shrink-0 ${
                     activeSection === 'agenda'
                       ? 'text-blue-600 border-b-3 border-blue-600'
                       : 'text-gray-600 hover:text-blue-600 border-b-3 border-transparent'
@@ -256,7 +256,7 @@ export default function Home() {
                 </button>
                 <button
                   onClick={() => handleNavClick('noticias')}
-                  className={`text-sm md:text-base lg:text-lg font-semibold transition-all duration-300 pb-2 whitespace-nowrap ${
+                  className={`text-xs md:text-sm lg:text-base font-semibold transition-all duration-300 pb-2 whitespace-nowrap flex-shrink-0 ${
                     activeSection === 'noticias'
                       ? 'text-blue-600 border-b-3 border-blue-600'
                       : 'text-gray-600 hover:text-blue-600 border-b-3 border-transparent'
@@ -266,7 +266,7 @@ export default function Home() {
                 </button>
                 <button
                   onClick={() => handleNavClick('calendario')}
-                  className="text-sm md:text-base lg:text-lg font-semibold transition-all duration-300 pb-2 text-gray-600 hover:text-blue-600 border-b-3 border-transparent whitespace-nowrap"
+                  className="text-xs md:text-sm lg:text-base font-semibold transition-all duration-300 pb-2 text-gray-600 hover:text-blue-600 border-b-3 border-transparent whitespace-nowrap flex-shrink-0"
                 >
                   Calendário Escolar
                 </button>
