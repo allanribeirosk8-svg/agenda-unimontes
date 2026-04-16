@@ -371,7 +371,7 @@ export default function Home() {
 
       {/* Menu Lateral Mobile */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-gray-200 shadow-md">
+        <div className="md:hidden fixed top-16 left-0 right-0 bg-white border-b border-gray-200 shadow-md z-40 max-h-[calc(100vh-64px)] overflow-y-auto">
           <div className="px-4 py-4 space-y-2">
             <button
               onClick={() => handleNavClick('agenda')}
